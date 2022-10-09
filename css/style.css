@@ -1,0 +1,245 @@
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.u-margin-top {
+  margin-top: 8rem !important; }
+
+.u-margin-top-big {
+  margin-top: 10rem !important; }
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  color: #333;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(105deg, rgba(58, 58, 89, 0.2) 0%, rgba(58, 58, 89, 0.2) 20%, rgba(88, 167, 175, 0.2) 20%, rgba(88, 167, 175, 0.2) 40%, rgba(199, 36, 177, 0.2) 40%, rgba(199, 36, 177, 0.2) 60%, rgba(88, 167, 175, 0.2) 60%, rgba(88, 167, 175, 0.2) 80%, rgba(58, 58, 89, 0.2) 80%, rgba(58, 58, 89, 0.2) 100%), url(../assets/img/synth-wave-bg.jpg);
+  background-position: center;
+  background-size: cover; }
+
+.info-title,
+.info-animation {
+  display: none; }
+
+.view-pop-up {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s; }
+  .view-pop-up__btn,
+  .view-pop-up :link,
+  .view-pop-up :visited {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    border: solid 5px #fff;
+    border-radius: 1rem;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center; }
+  .view-pop-up:hover {
+    transform: translateY(-0.3rem) scale(1.05) translate(-50%, -50%);
+    transform-origin: left;
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.4); }
+  .view-pop-up:active {
+    transform: translateY(0) translate(-50%, -50%);
+    box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.4); }
+
+.pop-up {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  overflow-x: hidden; }
+  .pop-up__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 70%;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.5) 80%, transparent 80%), url(../assets/img/synth-wave-triangle.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.4s 0.2s ease-in-out; }
+  .pop-up__information {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    height: 100%;
+    margin: 5rem 0; }
+  .pop-up__heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700; }
+  .pop-up__heading-secondary {
+    font-size: 2rem; }
+  .pop-up__paragraph {
+    font-size: 1.6rem;
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid black;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid black;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; }
+  .pop-up__btn-next {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translate(0, -50%);
+    width: 5rem;
+    height: 5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    transition: all 0.2s; }
+    .pop-up__btn-next--left {
+      left: 2rem; }
+    .pop-up__btn-next:hover {
+      background: #fff;
+      color: rgba(0, 0, 0, 0.5); }
+    .pop-up__btn-next:target {
+      opacity: 1;
+      visibility: visible; }
+    .pop-up__btn-next:target .pop-up__btn-next-2__content {
+      opacity: 1;
+      visibility: visible; }
+  .pop-up__btn-booking {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none; }
+  .pop-up-2__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 70%;
+    border: 10px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(105deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 17%, transparent 17%, transparent 50%, rgba(0, 0, 0, 0.9) 50%), url(../assets/img/cyber-punk-bg-img.jpg);
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) translateX(300rem);
+    transition: all 0.4s 0.2s ease-in-out; }
+    .pop-up-2__content-active {
+      transform: translate(-50%, -50%) translateX(0);
+      opacity: 1;
+      visibility: visible; }
+  .pop-up-2__information {
+    padding: 1.5rem;
+    width: 45%;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%); }
+  .pop-up-2__heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, pink, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+    text-align: center; }
+  .pop-up-2__heading-secondary {
+    font-size: 2rem;
+    color: lightgrey;
+    text-align: center; }
+  .pop-up:target {
+    opacity: 1;
+    visibility: visible; }
+  .pop-up:target .pop-up__content {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); }
+  .pop-up__close:link, .pop-up__close:visited {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 3rem;
+    line-height: 1;
+    display: inline-block;
+    transition: all 0.2s; }
+  .pop-up__close:hover {
+    color: #fff; }
+
+@media screen and (max-width: 1200px) {
+  body {
+    background: #fff; }
+  .info-title {
+    display: block;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; }
+  .info-animation {
+    display: block;
+    border: none;
+    position: absolute;
+    top: 70vh;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .main {
+    display: none; } }
+
+@media screen and (max-width: 500px) {
+  .info-title {
+    font-size: 20px; } }

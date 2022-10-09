@@ -1,0 +1,310 @@
+@import "sass/utilities";
+@import "sass/variables";
+@import "sass/mixins";
+
+//Base styles
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  color: #333;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(105deg, rgba(#3a3a59, 0.2) 0%, rgba(#3a3a59, 0.2) 20%, rgba(#58a7af, 0.2) 20%, rgba(#58a7af, 0.2) 40%, rgba(#c724b1, 0.2) 40%, rgba(#c724b1, 0.2) 60%, rgba(#58a7af, 0.2) 60%, rgba(#58a7af, 0.2) 80%, rgba(#3a3a59, 0.2) 80%, rgba(#3a3a59, 0.2) 100%), url(../assets/img/synth-wave-bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+//Screen width informatio, display none
+
+.info-title,
+.info-animation {
+  display: none;
+}
+
+//Wiew pop-up btn
+.view-pop-up {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+
+  &__btn,
+  :link,
+  :visited {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1.5rem 3rem;
+    background: $color-white;
+    color: #333;
+    text-decoration: none;
+    border: solid 5px #fff;
+    border-radius: 1rem;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem) scale(1.05) translate(-50%, -50%);
+    transform-origin: left;
+    box-shadow: 0rem 1rem 2rem rgba($color-black, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0) translate(-50%, -50%);
+    box-shadow: 0rem 0.5rem 2rem rgba($color-black, 0.4);
+  }
+}
+
+//Pop-up 1
+.pop-up {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  background-color: rgba($color-black, 0.8);
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  overflow-x: hidden;
+
+  //Pop-up styling
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 70%;
+    border: 10px solid rgba($color-white, 0.5);
+    border-radius: 3px;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    background-image: linear-gradient(105deg, transparent 20%, rgba($color-white, 0.5) 20%, rgba($color-white, 0.5) 80%, transparent 80%), url(../assets/img/synth-wave-triangle.jpg);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.4s 0.2s ease-in-out;
+  }
+
+  &__information {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    height: 100%;
+    margin: 5rem 0;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__heading-secondary {
+    font-size: 2rem;
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid black;
+
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid black;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+
+    hyphens: auto; // Document language er nød til at være specified for at dette virker.
+  }
+
+  //Interaktive elementer
+  &__btn-next {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translate(0, -50%);
+    width: 5rem;
+    height: 5rem;
+    background: rgba($color-white, 0.5);
+    border-radius: 1rem;
+    font-size: 3rem;
+    text-decoration: none;
+    color: $color-white;
+    text-align: center;
+    transition: all 0.2s;
+
+    &--left {
+      left: 2rem;
+    }
+
+    &:hover {
+      background: $color-white;
+      color: rgba($color-black, 0.5);
+    }
+
+    &:target {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:target &-2__content {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__btn-booking {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  // Pop-up nr. 2 styling
+  &-2__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 70%;
+    border: 10px solid rgba($color-black, 0.5);
+    border-radius: 3px;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    background-image: linear-gradient(105deg, rgba($color-black, 0.9) 0%, rgba($color-black, 0.9) 17%, transparent 17%, transparent 50%, rgba($color-black, 0.9) 50%), url(../assets/img/cyber-punk-bg-img.jpg);
+    color: $color-white;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) translateX(300rem);
+    transition: all 0.4s 0.2s ease-in-out;
+
+    &-active {
+      transform: translate(-50%, -50%) translateX(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-2__information {
+    padding: 1.5rem;
+    width: 45%;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+
+  &-2__heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, pink, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+    text-align: center;
+  }
+
+  &-2__heading-secondary {
+    font-size: 2rem;
+    color: lightgrey;
+    text-align: center;
+  }
+
+  //Open states
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      color: rgba($color-white, 0.5);
+      text-decoration: none;
+      font-size: 3rem;
+      line-height: 1;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+//Media queries
+@media screen and (max-width: 1200px) {
+  body {
+    background: #fff;
+  }
+
+  .info-title {
+    display: block;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .info-animation {
+    display: block;
+    border: none;
+    position: absolute;
+    top: 70vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .main {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .info-title {
+    font-size: 20px;
+  }
+}

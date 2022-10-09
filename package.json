@@ -1,0 +1,14 @@
+{
+  "name": "pop-ups-display-projekt",
+  "version": "1.0.0",
+  "description": "A display of different types of pop-ups.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Tobias",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}
