@@ -12,14 +12,14 @@ const newPopup = document.querySelector(".pop-up-2__content");
   popUpContent.style.display = "block";
 }); */
 
-closeBtn.addEventListener("click", function () {
-  popUp.classList.add("pop-up");
-});
-
 nextBtn.addEventListener("click", function () {
   newPopup.classList.add("pop-up-2__content-active");
 });
 
 nextBtn2.addEventListener("click", function () {
   newPopup.classList.remove("pop-up-2__content-active");
+});
+
+closeBtn.addEventListener("click", function () {
+  popUp.classList.add("pop-up");
 });
